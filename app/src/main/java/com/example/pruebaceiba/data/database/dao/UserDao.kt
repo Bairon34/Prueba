@@ -8,12 +8,17 @@ import com.example.pruebaceiba.data.database.entities.UserEntity
 
 @Dao
 interface UserDao {
-    @Query("SELECT * FROM user_table ORDER BY  id DESC")
+    @Query("SELECT * FROM user_table")
     suspend fun getAllUser():List<UserEntity>
+
+    @Query("SELECT * FROM user_table WHERE  name LIKE '%'|| :wordSearch ||'%'")
+    suspend fun getAllUserSearchs(wordSearch: String):List<UserEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(user:List<UserEntity>)
 
     @Query("DELETE FROM user_table")
     suspend fun deleteAllQuotes()
+
+
 }

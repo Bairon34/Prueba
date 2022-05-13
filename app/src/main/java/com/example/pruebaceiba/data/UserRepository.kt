@@ -24,6 +24,10 @@ class UserRepository @Inject constructor(
     }
 
 
+    suspend fun getAllUsersSearchsDatabase(wordSearchs: String):List<User>{
+        val response: List<UserEntity> = userDao.getAllUserSearchs(wordSearchs)
+        return response.map { it.toDomain() }
+    }
 
     suspend fun insertUsers(quotes:List<UserEntity>){
         userDao.insertAll(quotes)
