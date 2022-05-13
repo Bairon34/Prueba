@@ -1,13 +1,13 @@
-package com.example.pruebaceiba.ui.view
+package com.example.pruebaceiba.ui.adapter
 
-import android.content.Context
+
+import android.content.Intent
 import android.view.View
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pruebaceiba.R
 import com.example.pruebaceiba.databinding.AdapterViewUserBinding
 import com.example.pruebaceiba.domain.User
+import com.example.pruebaceiba.ui.view.Publications
+
 
 class UserViewHolder(view: View):RecyclerView.ViewHolder(view) {
     var binding = AdapterViewUserBinding.bind(view)
@@ -17,11 +17,13 @@ class UserViewHolder(view: View):RecyclerView.ViewHolder(view) {
         binding.textPhone.text =user.phone
         binding.textEmail.text =user.email
 
-
-
         binding.textSee.setOnClickListener {
-
-
+            val intent = Intent(binding.textSee.context, Publications::class.java)
+            intent.putExtra("userId", user.id.toString())
+            intent.putExtra("userName", user.name)
+            intent.putExtra("userPhone", user.phone)
+            intent.putExtra("userEmail", user.email)
+            binding.textSee.context.startActivity(intent)
         }
     }
 }

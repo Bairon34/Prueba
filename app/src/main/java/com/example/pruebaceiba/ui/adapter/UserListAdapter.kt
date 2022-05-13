@@ -1,4 +1,4 @@
-package com.example.pruebaceiba.ui.view
+package com.example.pruebaceiba.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

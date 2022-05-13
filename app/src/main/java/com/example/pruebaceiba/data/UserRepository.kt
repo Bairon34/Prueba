@@ -18,11 +18,11 @@ class UserRepository @Inject constructor(
         return response.map { it.toDomain() }
     }
 
+
     suspend fun getAllUsersFromDatabase():List<User>{
         val response: List<UserEntity> = userDao.getAllUser()
         return response.map { it.toDomain() }
     }
-
 
     suspend fun getAllUsersSearchsDatabase(wordSearchs: String):List<User>{
         val response: List<UserEntity> = userDao.getAllUserSearchs(wordSearchs)

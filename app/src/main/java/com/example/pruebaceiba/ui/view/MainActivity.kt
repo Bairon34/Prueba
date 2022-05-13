@@ -2,13 +2,13 @@ package com.example.pruebaceiba.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pruebaceiba.databinding.ActivityMainBinding
+import com.example.pruebaceiba.ui.adapter.UserListAdapter
 import com.example.pruebaceiba.ui.viewmodel.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
