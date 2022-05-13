@@ -25,29 +25,19 @@ class MainActivity : AppCompatActivity() {
 
         userViewModel.onCreate()
 
-
-        userViewModel.userModel.observe(this, Observer {
+        userViewModel.userModel.observe(this, Observer { listUser  ->
             binding.rcyList.layoutManager = LinearLayoutManager(this)
-            binding.rcyList.adapter = UserListAdapter(it)
+            binding.rcyList.adapter = UserListAdapter(listUser)
             binding.rcyList.adapter!!.notifyDataSetChanged()
-            Log.e("error","data "+it[0].email)
         })
 
-        userViewModel.isLoading.observe(this, Observer {
-            binding.loading.isVisible = it
+        userViewModel.isLoading.observe(this, Observer { isVisible ->
+            binding.loading.isVisible = isVisible
         })
 
-
-        binding.btn.setOnClickListener {
-            userViewModel.getDataLocal()
+        binding.edtSearch.addTextChangedListener { wordSearch  ->
+            userViewModel.getSearchsData(wordSearch.toString().trim())
         }
-
-
-        binding.edtSearch.addTextChangedListener { wordSearchs  ->
-            userViewModel.getSearchsData(wordSearchs.toString().trim())
-        }
-
-
     }
 
 }
