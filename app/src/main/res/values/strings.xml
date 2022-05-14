@@ -6,5 +6,5 @@
     <string name="name">Nombre:</string>
     <string name="phone">Teléfono:</string>
     <string name="email">Correo:</string>
-
+    <string name="message">SIN RESULTADOS DE BUSQUEDA :(</string>
 </resources>

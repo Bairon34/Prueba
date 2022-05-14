@@ -35,8 +35,13 @@ class MainActivity : AppCompatActivity() {
             binding.loading.isVisible = isVisible
         })
 
+        userViewModel.isSearch.observe(this, Observer { isVisible ->
+            binding.meesage.isVisible = isVisible
+            binding.rcyList.isVisible = !isVisible
+        })
+
         binding.edtSearch.addTextChangedListener { wordSearch  ->
-            userViewModel.getSearchsData(wordSearch.toString().trim())
+            userViewModel.getSearchData(wordSearch.toString().trim())
         }
     }
 
