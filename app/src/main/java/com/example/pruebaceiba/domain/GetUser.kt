@@ -7,12 +7,8 @@ import javax.inject.Inject
 class GetUser  @Inject constructor(
     private val repository: UserRepository
 ) {
-
-
-    suspend operator fun invoke(): List<User>? {
-
+    suspend operator fun invoke(): List<User> {
         val users = repository.getAllUsersFromApi()
-
         return if(users.isNotEmpty()){
             repository.clearUsers()
             repository.insertUsers(users.map { it.toDatabase() })

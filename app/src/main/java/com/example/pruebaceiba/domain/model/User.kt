@@ -13,8 +13,6 @@ data class User(
     val website: String
 )
 
-
-
 fun UserModel.toDomain() = User(email, id,name,phone,username,website)
 fun UserEntity.toDomain() = User(email, id,name,phone,username,website)
 

@@ -46,7 +46,6 @@ class UserViewModel @Inject constructor(
         }
     }
 
-
     fun getSearchData(wordSearchs: String) {
         viewModelScope.launch {
             isLoading.postValue(true)

@@ -20,6 +20,5 @@ class PublicationViewHolder(view: View) : RecyclerView.ViewHolder(view)  {
         binding.textTitle.text =publication.title
         binding.textBody.text =publication.body
 
-
     }
 }

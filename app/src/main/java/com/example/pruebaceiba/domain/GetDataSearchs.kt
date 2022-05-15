@@ -7,7 +7,6 @@ class GetDataSearchs @Inject constructor(
     private val repository: UserRepository
 ) {
     suspend operator fun invoke(wordSearchs: kotlin.String): List<User>?  {
-
         val users = repository.getAllUsersSearchsDatabase(wordSearchs)
 
         if (!users.isNullOrEmpty()) {

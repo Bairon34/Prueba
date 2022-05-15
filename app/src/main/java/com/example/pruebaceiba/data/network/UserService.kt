@@ -8,8 +8,6 @@ import javax.inject.Inject
 class UserService @Inject constructor(
     private val api:UserApiClient
 ) {
-
-
     suspend fun getUsers(): List<UserModel> {
         return withContext(Dispatchers.IO) {
             val response = api.getAllUsers()
