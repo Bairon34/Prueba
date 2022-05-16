@@ -87,10 +87,10 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     testImplementation "io.mockk:mockk:1.12.2"
 
-
+    testImplementation 'junit:junit:4.12'
     testImplementation 'androidx.test:core:1.4.1-alpha06'
     testImplementation 'androidx.test.ext:junit:1.1.4-alpha06'
-    testImplementation 'junit:junit:4.12'
+
     testImplementation 'org.robolectric:robolectric:4.6.1'
     testImplementation 'androidx.test.espresso:espresso-core:3.5.0-alpha06'
     testImplementation 'androidx.test.espresso:espresso-intents:3.5.0-alpha06'

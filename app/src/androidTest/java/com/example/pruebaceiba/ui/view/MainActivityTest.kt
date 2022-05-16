@@ -10,15 +10,9 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
-import androidx.test.ext.junit.rules.activityScenarioRule
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-
-
 import com.example.pruebaceiba.R
-import com.example.pruebaceiba.domain.User
-import com.example.pruebaceiba.ui.adapter.UserListAdapter
 import com.example.pruebaceiba.ui.adapter.UserViewHolder
 import org.hamcrest.CoreMatchers
 import org.junit.Rule
@@ -31,8 +25,8 @@ class MainActivityTest{
     val LIST_ITEM_IN_TEST = 4
 
 
-    @get:Rule
-    val activityRule = ActivityScenarioRule(MainActivity::class.java)
+   @get:Rule
+   val activityRule = ActivityScenarioRule(MainActivity::class.java)
 
 
     @Test
